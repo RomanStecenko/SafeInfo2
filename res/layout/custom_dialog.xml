@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#3E80B4">
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/save_as"
+              android:id="@+id/saveAsTextId"
+              android:textColor="@android:color/white"
+              />
+    <EditText android:layout_width="200dp"
+              android:layout_height="wrap_content"
+              android:hint="@string/hint_text_save_as"
+              android:textColorHint="@android:color/white"
+              android:id="@+id/ediTextSaveAs"
+            />
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#3E80B4"
+            android:orientation="horizontal" >
+
+    <Button android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="@string/save_button"
+            android:id="@+id/saveDialogButton"/>
+
+    <Button android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="@string/cancel_button"
+            android:id="@+id/cancelDialogButton"/>
+
+        </LinearLayout>
+
+
+</LinearLayout>

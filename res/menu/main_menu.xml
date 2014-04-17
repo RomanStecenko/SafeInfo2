@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:STapp="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:id="@+id/copy"
+            STapp:showAsAction="never"
+            android:title="@string/copy">
+    </item>
+
+    <item
+            android:id="@+id/paste"
+            STapp:showAsAction="never"
+            android:title="@string/past">
+    </item>
+
+    <item
+            android:id="@+id/clear"
+            STapp:showAsAction="never"
+            android:title="@string/clear">
+    </item>
+
+    <item
+            android:id="@+id/save"
+            STapp:showAsAction="never"
+            android:title="@string/save">
+    </item>
+
+    <item
+            android:id="@+id/read"
+            STapp:showAsAction="never"
+            android:title="@string/read">
+    </item>
+
+
+    <item
+            android:id="@+id/saveToDropbox"
+            STapp:showAsAction="never"
+            android:title="@string/saveToDropbox">
+    </item>
+
+    <item
+            android:id="@+id/readDropbox"
+            STapp:showAsAction="never"
+            android:title="@string/readDropbox">
+    </item>
+
+    <item
+            android:id="@+id/logoutDropbox"
+            STapp:showAsAction="never"
+            android:title="@string/logoutDropbox">
+    </item>
+
+
+
+
+</menu>

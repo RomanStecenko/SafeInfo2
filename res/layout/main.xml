@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drawer_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    <RelativeLayout
+            android:id="@+id/content_frame"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ff485072"
+            >
+
+
+
+        <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/make">
+
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/start_text_for_encryptEditText"
+                    android:id="@+id/encryptEditText"
+                    android:inputType="text"
+                    android:textSize="20sp"
+                    android:textStyle="bold" android:layout_alignParentTop="true"
+                    android:layout_above="@+id/linearlay"/>
+
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/linearlay">
+
+
+
+                    <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lookKeyButton"
+                            android:id="@+id/lookKeyButton"
+                            android:layout_toLeftOf="@+id/generateButton" android:onClick="onClick"/>
+
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/OK"
+                        android:id="@+id/okButton"
+                        android:layout_toLeftOf="@+id/generateButton"
+                        android:visibility="invisible"
+                        android:onClick="onClick"/>
+
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:hint="@string/start_text_for_key"
+                        android:id="@+id/lookKeyEditText"
+                        android:layout_toLeftOf="@+id/okButton"
+                        android:visibility="invisible"
+                        />
+
+                    <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/generateButton"
+                            android:id="@+id/generateButton"
+                            android:layout_toLeftOf="@+id/spinner"/>
+
+
+
+                    <Spinner
+                            android:id="@+id/spinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true" android:layout_alignParentLeft="false"/>
+
+
+            </RelativeLayout>
+
+            <TextView android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:text="@string/start_text_for_decryptEditText"
+                      android:background="#ff61ffe2"
+                      android:textColor="#000000"
+                      android:id="@+id/resultTextView"
+                      android:textSize="20sp"
+                      android:textStyle="bold"
+                      android:layout_alignParentBottom="true"
+                      android:layout_below="@+id/linearlay"
+                      android:textIsSelectable="true"/>
+
+
+        </RelativeLayout>
+
+        <Button
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:text="@string/encryptButton"
+                android:id="@+id/make"
+                android:onClick="onClick"
+                android:layout_gravity="center_horizontal|bottom" android:layout_alignParentBottom="true"/>
+
+
+    </RelativeLayout>
+
+    <ListView android:id="@+id/left_drawer"
+              android:layout_width="240dp"
+              android:layout_height="match_parent"
+              android:layout_gravity="start"
+              android:choiceMode="singleChoice"
+              android:divider="@android:color/transparent"
+              android:dividerHeight="0dp"
+              android:background="#ffff6f1b"/>
+
+</android.support.v4.widget.DrawerLayout>
+

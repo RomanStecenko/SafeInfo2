@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SafeInfo2</string>
+    <string name="start_text_for_encryptEditText">Input text for encrypting</string>
+    <string name="start_text_for_decryptEditText">Text for decrypting</string>
+    <string name="encryptButton">Encrypt</string>
+    <string name="decryptButton">Decrypt</string>
+    <string name="clear">Clear</string>
+    <string name="copy">Copy</string>
+    <string name="past">Past</string>
+    <string name="start_text_for_passwordEditText">Password</string>
+    <string name="checkPass">Show/Hide</string>
+    <string name="generateButton">Generate</string>
+
+    <string-array name="encrypt_methods">
+        <item>AES</item>
+        <item>Blowfish</item>
+        <item>DESede</item>
+    </string-array>
+
+    <string-array name="encrypt_methods_key_value">
+        <item>16</item>
+        <item>1-16</item>
+        <item>24</item>
+    </string-array>
+
+    <string-array name="mdrawer_titles">
+        <item>Encrypt text</item>
+        <item>Encrypt files</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="save">Save to File</string>
+    <string name="read">Read from File</string>
+    <string name="FE">FileExplorer</string>
+
+    <string name="show_dialog">Show dialog</string>
+    <string name="save_as">Save as..</string>
+    <string name="hint_text_save_as">input name</string>
+    <string name="save_button">Save</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="start_save">Start save</string>
+    <string name="saveToDropbox">Save to DropBox</string>
+    <string name="readDropbox">Read from DropBox</string>
+    <string name="swap">Swap</string>
+    <string name="encryptMethod">Encrypt</string>
+    <string name="decryptMethod">Decrypt</string>
+    <string name="overflow">Overflow</string>
+    <string name="lookKeyButton">Look Key</string>
+    <string name="start_text_for_key">input key value</string>
+    <string name="OK">OK</string>
+    <string name="logoutDropbox">Logout Dropbox</string>
+
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="3px" >
+
+    <ImageView
+            android:id="@+id/left_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/states_compound"
+            android:layout_gravity="center"
+            android:layout_marginTop="13dp"/>
+
+    <TextView
+            android:id="@+id/text_main_seen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:layout_marginTop="2px"
+            android:layout_toRightOf="@+id/left_pic"
+            android:padding="3px"
+            android:text="JMD Group"
+            android:textColor="#ff000000"
+            android:textSize="18px"
+            android:textStyle="bold" />
+
+    <TextView
+            android:id="@+id/sub_text_seen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_main_seen"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@+id/left_pic"
+            android:padding="2px"
+            android:text="beyond the expectations..."
+            android:textColor="#777777" />
+
+</RelativeLayout>
+
