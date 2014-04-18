@@ -131,8 +131,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3322785" vertical-offset="7222" max-vertical-offset="10744">
-              <caret line="540" column="35" selection-start-line="540" selection-start-column="17" selection-end-line="540" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.6550633" vertical-offset="7222" max-vertical-offset="10744">
+              <caret line="546" column="68" selection-start-line="546" selection-start-column="42" selection-end-line="546" selection-end-column="42" />
               <folding>
                 <element signature="class#8006:9784" expanded="false" />
                 <element signature="class#10151:10708" expanded="false" />
@@ -699,7 +699,7 @@
       <workItem from="1397735079903" duration="14037000" />
       <workItem from="1397759917335" duration="2470000" />
       <workItem from="1397815273167" duration="20325000" />
-      <workItem from="1397838891851" duration="838000" />
+      <workItem from="1397838891851" duration="907000" />
     </task>
     <task id="LOCAL-00001" summary="SafeInfo-second design&#10;">
       <created>1397760227161</created>
@@ -713,11 +713,15 @@
       <created>1397839717930</created>
       <updated>1397839717930</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="second finish commit">
+      <created>1397839779452</created>
+      <updated>1397839779452</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94430000" />
+    <option name="totallyTimeSpent" value="94499000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1270,8 +1274,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3322785" vertical-offset="7222" max-vertical-offset="10744">
-          <caret line="540" column="35" selection-start-line="540" selection-start-column="17" selection-end-line="540" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.6550633" vertical-offset="7222" max-vertical-offset="10744">
+          <caret line="546" column="68" selection-start-line="546" selection-start-column="42" selection-end-line="546" selection-end-column="42" />
           <folding>
             <element signature="class#8006:9784" expanded="false" />
             <element signature="class#10151:10708" expanded="false" />
