@@ -15,9 +15,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="appcompat" />
     <orderEntry type="library" name="libs" level="project" />
     <orderEntry type="library" name="dropbox-android-sdk-1.6.1" level="project" />
+    <orderEntry type="module" module-name="appcompat" />
   </component>
 </module>
 

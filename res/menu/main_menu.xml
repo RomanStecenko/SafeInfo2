@@ -52,6 +52,12 @@
             android:title="@string/logoutDropbox">
     </item>
 
+    <item
+            android:id="@+id/keyToClipboard"
+            STapp:showAsAction="never"
+            android:title="@string/keyToMemory">
+    </item>
+
 
 
 

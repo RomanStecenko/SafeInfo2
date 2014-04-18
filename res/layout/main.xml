@@ -29,59 +29,70 @@
                     android:inputType="text"
                     android:textSize="20sp"
                     android:textStyle="bold" android:layout_alignParentTop="true"
-                    android:layout_above="@+id/linearlay"/>
-
-            <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:layout_centerInParent="true"
-                    android:id="@+id/linearlay">
+                    android:layout_above="@+id/linearlay" android:padding="3dp"/>
 
 
 
-                    <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/lookKeyButton"
-                            android:id="@+id/lookKeyButton"
-                            android:layout_toLeftOf="@+id/generateButton" android:onClick="onClick"/>
 
-                <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@string/OK"
-                        android:id="@+id/okButton"
-                        android:layout_toLeftOf="@+id/generateButton"
-                        android:visibility="invisible"
-                        android:onClick="onClick"/>
+                <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="@string/OK"-->
+                <!--android:id="@+id/okButton"-->
+                <!--android:layout_toLeftOf="@+id/generateButton"-->
+                <!--android:visibility="invisible"-->
+                <!--android:onClick="onClick"/>-->
 
-                <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="fill_parent"
-                        android:hint="@string/start_text_for_key"
-                        android:id="@+id/lookKeyEditText"
-                        android:layout_toLeftOf="@+id/okButton"
-                        android:visibility="invisible"
-                        />
+                <!--<EditText-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="fill_parent"-->
+                <!--android:hint="@string/start_text_for_key"-->
+                <!--android:id="@+id/lookKeyEditText"-->
+                <!--android:layout_toLeftOf="@+id/okButton"-->
+                <!--android:visibility="invisible"-->
+                <!--/>-->
+                   <LinearLayout android:layout_width="fill_parent"
+                                 android:layout_height="50dp"
+                                 android:orientation="horizontal"
+                                 android:layout_centerInParent="true"
+                                 android:id="@+id/linearlay"
+                           android:weightSum="3.8">
 
-                    <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/generateButton"
-                            android:id="@+id/generateButton"
-                            android:layout_toLeftOf="@+id/spinner"/>
-
-
-
-                    <Spinner
-                            android:id="@+id/spinner"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_alignParentRight="true" android:layout_alignParentLeft="false"/>
+                       <Button
+                               android:layout_width="wrap_content"
+                               android:layout_height="match_parent"
+                               android:text="@string/lookKeyButton"
+                               android:id="@+id/lookKeyButton"
+                               android:onClick="onClick"
+                               android:layout_weight="1.4"/>
 
 
-            </RelativeLayout>
+
+                       <Button
+                               android:layout_width="wrap_content"
+                               android:layout_height="match_parent"
+                               android:text="@string/generateButton"
+                               android:id="@+id/generateButton"
+                               android:layout_weight="1.4"
+                               />
+
+                       <Spinner
+                               android:id="@+id/spinner"
+                               android:layout_width="wrap_content"
+                               android:layout_height="match_parent"
+                               android:layout_weight="1"
+                               />
+
+                                 </LinearLayout>
+
+
+
+
+
+
+
+
+
 
             <TextView android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
@@ -93,7 +104,7 @@
                       android:textStyle="bold"
                       android:layout_alignParentBottom="true"
                       android:layout_below="@+id/linearlay"
-                      android:textIsSelectable="true"/>
+                      android:textIsSelectable="true" android:padding="3dp"/>
 
 
         </RelativeLayout>
@@ -104,7 +115,8 @@
                 android:text="@string/encryptButton"
                 android:id="@+id/make"
                 android:onClick="onClick"
-                android:layout_gravity="center_horizontal|bottom" android:layout_alignParentBottom="true"/>
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_alignParentBottom="true"/>
 
 
     </RelativeLayout>

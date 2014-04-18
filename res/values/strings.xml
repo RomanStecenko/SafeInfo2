@@ -19,15 +19,13 @@
     </string-array>
 
     <string-array name="encrypt_methods_key_value">
-        <item>16</item>
-        <item>1-16</item>
-        <item>24</item>
+        <item>16 symbol key length</item>
+        <item>1&#8211;16 symbol  key length</item>
+        <item>24 symbol key length</item>
     </string-array>
 
     <string-array name="mdrawer_titles">
-        <item>Encrypt text</item>
-        <item>Encrypt files</item>
-        <item>Settings</item>
+        <item>In development</item>
     </string-array>
 
     <string name="drawer_open">Open navigation drawer</string>
@@ -52,5 +50,6 @@
     <string name="start_text_for_key">input key value</string>
     <string name="OK">OK</string>
     <string name="logoutDropbox">Logout Dropbox</string>
+    <string name="keyToMemory">Copy key to memory</string>
 
 </resources>
