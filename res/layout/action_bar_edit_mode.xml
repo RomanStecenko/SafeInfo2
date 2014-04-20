@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/encryptMethod"
-            android:onClick="onClick"
             android:textColor="#fbfffb"/>
 
     <Button
@@ -25,7 +24,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/btn_swap"
-            android:onClick="onClick"/>
+            />
 
     <Button
             android:id="@+id/action_bar_secondMethod"
@@ -33,7 +32,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/decryptMethod"
-            android:onClick="onClick"
             android:textColor="#fbfffb"/>
 
 
