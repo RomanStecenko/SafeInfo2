@@ -5,7 +5,7 @@
         android:id="@+id/fragment_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#ff485072"
+        android:background="#fff1f1f1"
         >
 
 
@@ -71,7 +71,7 @@
         <TextView android:layout_width="fill_parent"
                   android:layout_height="wrap_content"
                   android:text="@string/start_text_for_decryptEditText"
-                  android:background="#ff61ffe2"
+                  android:background="#ffdafdff"
                   android:textColor="#000000"
                   android:id="@+id/resultTextView"
                   android:textSize="20sp"

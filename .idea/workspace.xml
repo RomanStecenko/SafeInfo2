@@ -60,16 +60,17 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.example.SafeInfo2" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="mylog" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b060d0e-4413-4944-956d-6ac45cb3debb" name="Default" comment="project to fragment">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/SafeInfo2/Consts.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/SafeInfo2/MainFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/fragment.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/SafeInfo2/TextWorkAsyncTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/SafeInfo2/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/example/SafeInfo2/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/action_bar_edit_mode.xml" afterPath="$PROJECT_DIR$/res/layout/action_bar_edit_mode.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/SafeInfo2/MainFragment.java" afterPath="$PROJECT_DIR$/src/com/example/SafeInfo2/MainFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/SafeInfo2/ReadDropBoxAsyncTask.java" afterPath="$PROJECT_DIR$/src/com/example/SafeInfo2/ReadDropBoxAsyncTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fragment.xml" afterPath="$PROJECT_DIR$/res/layout/fragment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SafeInfo2.iws" />
@@ -139,7 +140,6 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
               <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding>
-                <element signature="imports" expanded="false" />
                 <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onPostCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onConfigurationChanged#0;class#MainActivity#0" expanded="false" />
@@ -154,18 +154,18 @@
       <file leaf-file-name="DropBoxAsyncTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/DropBoxAsyncTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="765">
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="629">
               <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadDropBoxAsyncTask.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ReadDropBoxAsyncTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/ReadDropBoxAsyncTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2177651" vertical-offset="0" max-vertical-offset="1292">
-              <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="1343">
+              <caret line="43" column="8" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="method#getStringFromFile#0;class#ReadDropBoxAsyncTask#0" expanded="false" />
               </folding>
@@ -176,32 +176,54 @@
       <file leaf-file-name="MainFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/MainFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="2703">
-              <caret line="495" column="75" selection-start-line="495" selection-start-column="50" selection-end-line="495" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1845" max-vertical-offset="3757">
+              <caret line="498" column="77" selection-start-line="498" selection-start-column="77" selection-end-line="498" selection-end-column="77" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="e#1999#2007#0" expanded="true" />
                 <element signature="method#onAttach#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#onCreateView#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#onActivityCreated#0;class#MainFragment#0" expanded="false" />
-                <element signature="method#onClick#0;class#MainFragment#0" expanded="false" />
+                <element signature="method#onResume#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#onSaveInstanceState#0;class#MainFragment#0" expanded="false" />
+                <element signature="method#onCreateOptionsMenu#0;class#MainFragment#0" expanded="false" />
+                <element signature="method#onOptionsItemSelected#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#getSharedPreferences#0;class#MainFragment#0" expanded="false" />
+                <element signature="method#onClick#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#initializationVariables#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#initializationMainObjects#0;class#MainFragment#0" expanded="false" />
-                <element signature="class#15454:17244" expanded="false" />
                 <element signature="method#randomString#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#onCreateDialog#0;class#MainFragment#0" expanded="false" />
-                <element signature="method#onOptionsItemSelected#0;class#MainFragment#0" expanded="false" />
+                <element signature="e#15810#18312#0" expanded="true" />
+                <element signature="e#18293#18294#0" expanded="true" />
+                <element signature="method#logInOutDropbox#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#lookKey#0;class#MainFragment#0" expanded="false" />
+                <element signature="e#25895#26465#0" expanded="true" />
+                <element signature="e#26446#26447#0" expanded="true" />
+                <element signature="e#26523#26809#0" expanded="true" />
+                <element signature="e#26790#26791#0" expanded="true" />
                 <element signature="method#swap#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#copy#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#past#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#saveKey#0;class#MainFragment#0" expanded="false" />
                 <element signature="method#loadFileList#0;class#MainFragment#0" expanded="false" />
+                <element signature="e#33348#33737#0" expanded="true" />
+                <element signature="e#33722#33723#0" expanded="true" />
                 <element signature="method#getStringFromFile#0;class#MainFragment#0" expanded="false" />
                 <element signature="class#Item#0;class#MainFragment#0" expanded="false" />
+                <element signature="e#36783#36784#0" expanded="true" />
+                <element signature="e#36818#36819#0" expanded="true" />
                 <element signature="class#MyAdapter#0;class#MainFragment#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextWorkAsyncTask.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/TextWorkAsyncTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.12927757" vertical-offset="459" max-vertical-offset="782">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -209,7 +231,7 @@
       <file leaf-file-name="CustomDropBoxDialogClass.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/CustomDropBoxDialogClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1156" max-vertical-offset="1581">
+            <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1343">
               <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
               <folding />
             </state>
@@ -219,7 +241,7 @@
       <file leaf-file-name="CustomDialogClass.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/CustomDialogClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="2210">
+            <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1921">
               <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
               <folding />
             </state>
@@ -265,16 +287,18 @@
         <option value="$PROJECT_DIR$/src/com/example/SafeInfo2/CustomDropBoxDialogClass.java" />
         <option value="$PROJECT_DIR$/src/com/example/SafeInfo2/Consts.java" />
         <option value="$PROJECT_DIR$/src/com/example/SafeInfo2/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/SafeInfo2/MainFragment.java" />
         <option value="$PROJECT_DIR$/res/layout/fragment.xml" />
         <option value="$PROJECT_DIR$/src/com/example/SafeInfo2/ReadDropBoxAsyncTask.java" />
+        <option value="$PROJECT_DIR$/src/com/example/SafeInfo2/MainFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/example/SafeInfo2/TextWorkAsyncTask.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="120" />
-    <option name="width" value="868" />
-    <option name="height" value="728" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -695,7 +719,7 @@
       <workItem from="1397889080790" duration="27434000" />
       <workItem from="1397938283563" duration="8262000" />
       <workItem from="1397982803182" duration="31182000" />
-      <workItem from="1398024413883" duration="8778000" />
+      <workItem from="1398024413883" duration="13828000" />
     </task>
     <task id="LOCAL-00001" summary="SafeInfo-second design&#10;">
       <created>1397760227161</created>
@@ -721,7 +745,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170907000" />
+    <option name="totallyTimeSpent" value="175957000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -744,7 +768,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="120" y="0" width="868" height="728" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -762,14 +786,14 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2492971" sideWeight="0.5017065" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29238755" sideWeight="0.49957448" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11383538" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2879046" sideWeight="0.49957448" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47189096" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2492971" sideWeight="0.49829352" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27160493" sideWeight="0.49829352" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16616315" sideWeight="0.49829352" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32027256" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -803,7 +827,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -811,20 +835,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="986">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2771">
           <caret line="96" column="64" selection-start-line="96" selection-start-column="61" selection-end-line="96" selection-end-column="61" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onPostCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onConfigurationChanged#0;class#MainActivity#0" expanded="false" />
@@ -893,7 +908,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="2771">
           <caret line="47" column="32" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onPostCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onConfigurationChanged#0;class#MainActivity#0" expanded="false" />
@@ -947,7 +961,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="2771">
           <caret line="47" column="32" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onPostCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onConfigurationChanged#0;class#MainActivity#0" expanded="false" />
@@ -1188,6 +1201,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/Consts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2559055" vertical-offset="88" max-vertical-offset="459">
+          <caret line="9" column="47" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/fragment.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9550562" vertical-offset="969" max-vertical-offset="1700">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/ReadDropBoxAsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="1343">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="method#getStringFromFile#0;class#ReadDropBoxAsyncTask#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/DropBoxAsyncTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="629">
@@ -1200,14 +1242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="788" max-vertical-offset="1343">
           <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/Consts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2559055" vertical-offset="88" max-vertical-offset="459">
-          <caret line="9" column="47" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1225,7 +1259,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
           <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onPostCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onConfigurationChanged#0;class#MainActivity#0" expanded="false" />
@@ -1236,55 +1269,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/fragment.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4070797" vertical-offset="0" max-vertical-offset="1700">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/MainFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="2703">
-          <caret line="495" column="75" selection-start-line="495" selection-start-column="50" selection-end-line="495" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1845" max-vertical-offset="3757">
+          <caret line="498" column="77" selection-start-line="498" selection-start-column="77" selection-end-line="498" selection-end-column="77" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#1999#2007#0" expanded="true" />
             <element signature="method#onAttach#0;class#MainFragment#0" expanded="false" />
             <element signature="method#onCreateView#0;class#MainFragment#0" expanded="false" />
             <element signature="method#onActivityCreated#0;class#MainFragment#0" expanded="false" />
-            <element signature="method#onClick#0;class#MainFragment#0" expanded="false" />
+            <element signature="method#onResume#0;class#MainFragment#0" expanded="false" />
             <element signature="method#onSaveInstanceState#0;class#MainFragment#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainFragment#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainFragment#0" expanded="false" />
             <element signature="method#getSharedPreferences#0;class#MainFragment#0" expanded="false" />
+            <element signature="method#onClick#0;class#MainFragment#0" expanded="false" />
             <element signature="method#initializationVariables#0;class#MainFragment#0" expanded="false" />
             <element signature="method#initializationMainObjects#0;class#MainFragment#0" expanded="false" />
-            <element signature="class#15454:17244" expanded="false" />
             <element signature="method#randomString#0;class#MainFragment#0" expanded="false" />
             <element signature="method#onCreateDialog#0;class#MainFragment#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#MainFragment#0" expanded="false" />
+            <element signature="e#15810#18312#0" expanded="true" />
+            <element signature="e#18293#18294#0" expanded="true" />
+            <element signature="method#logInOutDropbox#0;class#MainFragment#0" expanded="false" />
             <element signature="method#lookKey#0;class#MainFragment#0" expanded="false" />
+            <element signature="e#25895#26465#0" expanded="true" />
+            <element signature="e#26446#26447#0" expanded="true" />
+            <element signature="e#26523#26809#0" expanded="true" />
+            <element signature="e#26790#26791#0" expanded="true" />
             <element signature="method#swap#0;class#MainFragment#0" expanded="false" />
             <element signature="method#copy#0;class#MainFragment#0" expanded="false" />
             <element signature="method#past#0;class#MainFragment#0" expanded="false" />
             <element signature="method#saveKey#0;class#MainFragment#0" expanded="false" />
             <element signature="method#loadFileList#0;class#MainFragment#0" expanded="false" />
+            <element signature="e#33348#33737#0" expanded="true" />
+            <element signature="e#33722#33723#0" expanded="true" />
             <element signature="method#getStringFromFile#0;class#MainFragment#0" expanded="false" />
             <element signature="class#Item#0;class#MainFragment#0" expanded="false" />
+            <element signature="e#36783#36784#0" expanded="true" />
+            <element signature="e#36818#36819#0" expanded="true" />
             <element signature="class#MyAdapter#0;class#MainFragment#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/ReadDropBoxAsyncTask.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/SafeInfo2/TextWorkAsyncTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2177651" vertical-offset="0" max-vertical-offset="1292">
-          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-          <folding>
-            <element signature="method#getStringFromFile#0;class#ReadDropBoxAsyncTask#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-0.12927757" vertical-offset="459" max-vertical-offset="782">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

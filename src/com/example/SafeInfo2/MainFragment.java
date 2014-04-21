@@ -33,6 +33,7 @@ import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import static com.example.SafeInfo2.Consts.*;
 
@@ -44,7 +45,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private String encryptMethods[], encryptMethodsValue[], text2, text3, readText, algorithm, chosenFile, accessToken, toDo;
     private EditText  encryptEditText;
     private TextView resultTextView;
-    private byte[] input, keyValue, keyValueToCheck, standardKeyValue24, standardKeyValue;
+    private byte[] keyValue;
+    private byte[] keyValueToCheck;
+    private byte[] standardKeyValue24;
+    private byte[] standardKeyValue;
     private Cipher ecipher, dcipher;
     private ArrayList<String> str = new ArrayList<String>();
     private Item[] fileList;
@@ -141,148 +145,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.action_bar_firstMethod:
-            break;
-            case R.id.action_bar_swap:
-                swap();
-                break;
-            case R.id.action_bar_secondMethod:
-                break;
-            case R.id.lookKeyButton:
-                lookKey();
-                break;
-            case R.id.make:
-                String text = encryptEditText.getText().toString();
-                Log.d(log, "TEXT length: " + text.length());
-                if (text.length() <= 0) {
-                    Toast.makeText(getActivity(), "Input your text first", Toast.LENGTH_SHORT).show();
-                } else {
-
-                    if (algorithm.equals(AES) && keyValueToCheck.length == 16) {                    //lookKeyEditText.getText().toString().length()  <=>    keyValueToCheck.length
-                        keyValue = keyValueToCheck;                 //lookKeyEditText.getText().toString().getBytes() <=>   keyValueToCheck
-                        Log.d(log, "keyValue : " + new String(keyValue));
-                    } else if (algorithm.equals(BLOWFISH) && keyValueToCheck.length <= 16 && keyValueToCheck.length > 0) {
-                        keyValue = keyValueToCheck;
-                        Log.d(log, "keyValue : " + new String(keyValue));
-                    } else if (algorithm.equals(DESEDE) && keyValueToCheck.length == 24) {
-                        keyValue = keyValueToCheck;
-                        Log.d(log, "keyValue : " + new String(keyValue));
-                    } else {
-                        if (algorithm.equals(DESEDE)) {
-                            Log.d(log, " password length " + keyValueToCheck.length);
-                            Toast.makeText(getActivity(), "Use standard DESede key value " + new String(standardKeyValue24), Toast.LENGTH_SHORT).show();
-                            //lookKeyEditText.setText(new String(standardKeyValue24));   <=> keyValueToCheck = standardKeyValue24;
-                            keyValueToCheck = standardKeyValue24;
-                            keyValue = standardKeyValue24;
-                        } else {
-                            Log.d(log, " password length " + keyValueToCheck.length);
-                            Toast.makeText(getActivity(), "Use standard key value " + new String(standardKeyValue), Toast.LENGTH_SHORT).show();
-                            //lookKeyEditText.setText(new String(standardKeyValue));
-                            keyValueToCheck = standardKeyValue;
-                            keyValue = standardKeyValue;
-                        }
-
-                    }
-                    Key key = new SecretKeySpec(keyValue, algorithm);
-
-                    if (methodFlag) { //encrypt
-                        try {
-                            ecipher = Cipher.getInstance(algorithm);         // DES/CBC/PKCS5Padding
-                            ecipher.init(Cipher.ENCRYPT_MODE, key);            //  AES/ECB/PKCS5Padding
-                        } catch (NoSuchAlgorithmException e) {
-                            e.printStackTrace();
-                        } catch (NoSuchPaddingException e) {
-                            e.printStackTrace();
-                        } catch (InvalidKeyException e) {
-                            e.printStackTrace();
-                        }
-
-                        Log.d(log, "TEXT1: " + text);
-                        try {
-                            input = text.getBytes("UTF8");
-
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
-                        Log.d(log, "char mus: " + new String(input));//,"UTF-8"));
-                        try {
-                            byte[] boxCharMus = ecipher.doFinal(input);
-                            text2 = android.util.Base64.encodeToString(boxCharMus, android.util.Base64.DEFAULT);
-                            Log.d(log, "TEXT2: " + text2);
-                        } catch (IllegalBlockSizeException e) {
-                            e.printStackTrace();
-                            Log.d(log, "IllegalBlockSizeException  " + e.toString());
-                        } catch (BadPaddingException e) {
-                            e.printStackTrace();
-                            Log.d(log, "BadPaddingException " + e.toString());
-                        }
-
-                        resultTextView.setText(text2);
-
-
-                    } else {    //decrypt
-                        try {
-                            dcipher = Cipher.getInstance(algorithm);         // DES/CBC/PKCS5Padding
-                            dcipher.init(Cipher.DECRYPT_MODE, key);            //  AES/ECB/PKCS5Padding
-                        } catch (NoSuchAlgorithmException e) {
-                            e.printStackTrace();
-                        } catch (NoSuchPaddingException e) {
-                            e.printStackTrace();
-                        } catch (InvalidKeyException e) {
-                            e.printStackTrace();
-                        }
-
-
-
-
-                        try {
-                            byte[] decryptMus = android.util.Base64.decode(text, android.util.Base64.DEFAULT);
-                            Log.d(log, "decryptMus simple: " + new String(decryptMus));
-                            byte[] boxCharMus1 = dcipher.doFinal(decryptMus);
-                            text3 = new String(boxCharMus1, "UTF8");
-                            Log.d(log, "TEXT3: " + text3);
-                            error = true;
-
-                        } catch (IllegalBlockSizeException e) {
-                            Log.d(log, "TEXT3:IllegalBlockSizeException " + e.toString());
-                            e.printStackTrace();
-                            Toast.makeText(getActivity(), "Wrong info", Toast.LENGTH_SHORT).show();
-                            error = false;
-                        } catch (BadPaddingException e) {
-                            Log.d(log, "TEXT3:BadPaddingException " + e.toString());
-                            Toast.makeText(getActivity(), "Wrong key/password", Toast.LENGTH_SHORT).show();
-                            error = false;
-                            e.printStackTrace();
-                        } catch (UnsupportedEncodingException e) {
-                            Log.d(log, "TEXT3:UnsupportedEncodingException " + e.toString());
-                            Toast.makeText(getActivity(), "Error:UnsupportedEncoding", Toast.LENGTH_SHORT).show();
-                            e.printStackTrace();
-                            error = false;
-                        }   catch (Exception e) {
-                            Log.d(log, "!!!Exception!!! " + e.toString());
-                            Toast.makeText(getActivity(), "Can't Decrypt this text", Toast.LENGTH_SHORT).show();
-                            e.printStackTrace();
-                            error = false;
-                        }
-
-                        if (error) {
-                            resultTextView.setText(text3);
-                            Log.d(log, "result(error? - ok): " + error);
-                        } else {
-                            resultTextView.setText("");
-                            Log.d(log, "result(error? - bad): " + error);
-                        }
-
-
-                    }
-                }
-                break;
-        }
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current game state
         savedInstanceState.putBoolean(METHOD_FLAG, methodFlag);
@@ -292,8 +154,111 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         super.onSaveInstanceState(savedInstanceState);
        }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        Log.d(log, "onCreateOptionsMenu 1 " );
+        inflater.inflate(R.menu.main_menu,menu);
+        inOut = menu.findItem(R.id.logoutDropbox);
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
+        accessToken = prefs.getString(ACCESS_TOKEN, null);
+        if (accessToken == null){
+            autentif=false;
+            inOut.setTitle("Login Dropbox");
+            Log.d(log, "onCreateOptionsMenu 2 " );
+        }  else {
+            session.setOAuth2AccessToken(accessToken);
+            autentif=true;
+            inOut.setTitle("Logout Dropbox");
+            Log.d(log, "onCreateOptionsMenu - " );
+        }
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.copy:
+                copy();
+                break;
+            case R.id.paste:
+                past();
+                break;
+            case R.id.clear:
+                encryptEditText.setText("");
+                resultTextView.setText("");
+                break;
+            case R.id.save:
+                if (resultTextView.getText().toString().length() > 0) {
+                    Toast.makeText(getActivity(), "save result to file", Toast.LENGTH_SHORT).show();
+                    CustomDialogClass cdd = new CustomDialogClass(getActivity(), resultTextView.getText().toString());
+                    cdd.show();
+                } else {
+                    Toast.makeText(getActivity(), "Nothing to save", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.read:
+                onCreateDialog(DIALOG_LOAD_FILE);
+                break;
+            case R.id.saveToDropbox:
+                if (resultTextView.getText().toString().length() > 0) {
+                    if (autentif){
+                        CustomDialogClass cdd = new CustomDialogClass(getActivity(), resultTextView.getText().toString(), 1, mDBApi);
+                        cdd.show();
+                    }  else {
+                        Toast.makeText(getActivity(), "Login To Dropbox first", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getActivity(), "Nothing to save", Toast.LENGTH_SHORT).show();
+                }
+                break;
+
+            case R.id.readDropbox:
+                if (autentif){
+                    CustomDropBoxDialogClass cdd1 = new CustomDropBoxDialogClass(getActivity(), mDBApi, encryptEditText);
+                    cdd1.show();
+                }  else {
+                    Toast.makeText(getActivity(), "Login To Dropbox first", Toast.LENGTH_SHORT).show();
+                }
+                break;
+
+            case R.id.logoutDropbox:
+                logInOutDropbox();
+                break;
+
+            case R.id.keyToClipboard:
+                saveKey();
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
     private SharedPreferences getSharedPreferences(String name, int mode){
-             return getActivity().getSharedPreferences(name,mode);
+        return getActivity().getSharedPreferences(name,mode);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.action_bar_firstMethod:
+                break;
+            case R.id.action_bar_swap:
+                swap();
+                break;
+            case R.id.action_bar_secondMethod:
+                break;
+            case R.id.lookKeyButton:
+                lookKey();
+                break;
+            case R.id.make:
+                make();
+                break;
+        }
     }
 
     private void initializationVariables(){
@@ -478,87 +443,129 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         return dialog;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        Log.d(log, "onCreateOptionsMenu 1 " );
-        inflater.inflate(R.menu.main_menu,menu);
-        inOut = menu.findItem(R.id.logoutDropbox);
-        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
-        accessToken = prefs.getString(ACCESS_TOKEN, null);
-        if (accessToken == null){
-            autentif=false;
-            inOut.setTitle("Login Dropbox");
-            Log.d(log, "onCreateOptionsMenu 2 " );
-        }  else {
-            session.setOAuth2AccessToken(accessToken);
-            autentif=true;
-            inOut.setTitle("Logout Dropbox");
-            Log.d(log, "onCreateOptionsMenu - " );
-        }
-        super.onCreateOptionsMenu(menu, inflater);
-    }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.copy:
-                copy();
-                break;
-            case R.id.paste:
-                past();
-                break;
-            case R.id.clear:
-                encryptEditText.setText("");
-                resultTextView.setText("");
-                break;
-            case R.id.save:
-                if (resultTextView.getText().toString().length() > 0) {
-                    Toast.makeText(getActivity(), "save result to file", Toast.LENGTH_SHORT).show();
-                    CustomDialogClass cdd = new CustomDialogClass(getActivity(), resultTextView.getText().toString());
-                    cdd.show();
+    private void make(){
+        String text = encryptEditText.getText().toString();
+        Log.d(log, "TEXT length: " + text.length());
+        if (text.length() <= 0) {
+            Toast.makeText(getActivity(), "Input your text first", Toast.LENGTH_SHORT).show();
+        } else {
+
+            if (algorithm.equals(AES) && keyValueToCheck.length == 16) {                    //lookKeyEditText.getText().toString().length()  <=>    keyValueToCheck.length
+                keyValue = keyValueToCheck;                 //lookKeyEditText.getText().toString().getBytes() <=>   keyValueToCheck
+                Log.d(log, "keyValue : " + new String(keyValue));
+            } else if (algorithm.equals(BLOWFISH) && keyValueToCheck.length <= 16 && keyValueToCheck.length > 0) {
+                keyValue = keyValueToCheck;
+                Log.d(log, "keyValue : " + new String(keyValue));
+            } else if (algorithm.equals(DESEDE) && keyValueToCheck.length == 24) {
+                keyValue = keyValueToCheck;
+                Log.d(log, "keyValue : " + new String(keyValue));
+            } else {
+                if (algorithm.equals(DESEDE)) {
+                    Log.d(log, " password length " + keyValueToCheck.length);
+                    Toast.makeText(getActivity(), "Use standard DESede key value " + new String(standardKeyValue24), Toast.LENGTH_SHORT).show();
+                    //lookKeyEditText.setText(new String(standardKeyValue24));   <=> keyValueToCheck = standardKeyValue24;
+                    keyValueToCheck = standardKeyValue24;
+                    keyValue = standardKeyValue24;
                 } else {
-                    Toast.makeText(getActivity(), "Nothing to save", Toast.LENGTH_SHORT).show();
+                    Log.d(log, " password length " + keyValueToCheck.length);
+                    Toast.makeText(getActivity(), "Use standard key value " + new String(standardKeyValue), Toast.LENGTH_SHORT).show();
+                    //lookKeyEditText.setText(new String(standardKeyValue));
+                    keyValueToCheck = standardKeyValue;
+                    keyValue = standardKeyValue;
                 }
-                break;
-            case R.id.read:
-                onCreateDialog(DIALOG_LOAD_FILE);
-                break;
-            case R.id.saveToDropbox:
-                if (resultTextView.getText().toString().length() > 0) {
-                    if (autentif){
-                        CustomDialogClass cdd = new CustomDialogClass(getActivity(), resultTextView.getText().toString(), 1, mDBApi);
-                        cdd.show();
-                    }  else {
-                        Toast.makeText(getActivity(), "Login To Dropbox first", Toast.LENGTH_SHORT).show();
-                    }
+
+            }
+            Key key = new SecretKeySpec(keyValue, algorithm);
+
+            if (methodFlag) { //encrypt
+                try {
+                    ecipher = Cipher.getInstance(algorithm);         // DES/CBC/PKCS5Padding
+                    ecipher.init(Cipher.ENCRYPT_MODE, key);            //  AES/ECB/PKCS5Padding
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                } catch (NoSuchPaddingException e) {
+                    e.printStackTrace();
+                } catch (InvalidKeyException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+                //Log.d(log, "TEXT1: " + text);
+
+                try {
+                    text2 =  new TextWorkAsyncTask(getActivity(),text,ecipher).execute().get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+
+
+                //Log.d(log, "char mus: " + new String(input));//,"UTF-8"));
+
+
+                resultTextView.setText(text2);
+
+
+            } else {    //decrypt
+                try {
+                    dcipher = Cipher.getInstance(algorithm);         // DES/CBC/PKCS5Padding
+                    dcipher.init(Cipher.DECRYPT_MODE, key);            //  AES/ECB/PKCS5Padding
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                } catch (NoSuchPaddingException e) {
+                    e.printStackTrace();
+                } catch (InvalidKeyException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+                try {
+                    byte[] decryptMus = android.util.Base64.decode(text, android.util.Base64.DEFAULT);
+                   // Log.d(log, "decryptMus simple: " + new String(decryptMus));
+                    byte[] boxCharMus1 = dcipher.doFinal(decryptMus);
+                    text3 = new String(boxCharMus1, "UTF8");
+                    //Log.d(log, "TEXT3: " + text3);
+                    error = true;
+
+                } catch (IllegalBlockSizeException e) {
+                    Log.d(log, "TEXT3:IllegalBlockSizeException " + e.toString());
+                    e.printStackTrace();
+                    Toast.makeText(getActivity(), "Wrong info", Toast.LENGTH_SHORT).show();
+                    error = false;
+                } catch (BadPaddingException e) {
+                    Log.d(log, "TEXT3:BadPaddingException " + e.toString());
+                    Toast.makeText(getActivity(), "Wrong key/password", Toast.LENGTH_SHORT).show();
+                    error = false;
+                    e.printStackTrace();
+                } catch (UnsupportedEncodingException e) {
+                    Log.d(log, "TEXT3:UnsupportedEncodingException " + e.toString());
+                    Toast.makeText(getActivity(), "Error:UnsupportedEncoding", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                    error = false;
+                }   catch (Exception e) {
+                    Log.d(log, "!!!Exception!!! " + e.toString());
+                    Toast.makeText(getActivity(), "Can't Decrypt this text", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                    error = false;
+                }
+
+                if (error) {
+                    resultTextView.setText(text3);
+                    Log.d(log, "result(error? - ok): " + error);
                 } else {
-                    Toast.makeText(getActivity(), "Nothing to save", Toast.LENGTH_SHORT).show();
+                    resultTextView.setText("");
+                    Log.d(log, "result(error? - bad): " + error);
                 }
-                break;
 
-            case R.id.readDropbox:
-                if (autentif){
-                    CustomDropBoxDialogClass cdd1 = new CustomDropBoxDialogClass(getActivity(), mDBApi, encryptEditText);
-                    cdd1.show();
-                }  else {
-                    Toast.makeText(getActivity(), "Login To Dropbox first", Toast.LENGTH_SHORT).show();
-                }
-                break;
 
-            case R.id.logoutDropbox:
-                logInOutDropbox();
-                break;
-
-            case R.id.keyToClipboard:
-                saveKey();
-                break;
-
-            default:
-                return super.onOptionsItemSelected(item);
-
+            }
         }
-        return super.onOptionsItemSelected(item);
     }
 
     private void logInOutDropbox(){

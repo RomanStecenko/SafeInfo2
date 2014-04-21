@@ -41,6 +41,7 @@ public class ReadDropBoxAsyncTask extends AsyncTask<Void, String, String> {
 
     @Override
     protected void onPostExecute(String s) {
+
         progressDialog.dismiss();
     }
 
